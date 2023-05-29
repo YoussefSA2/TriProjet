@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1116.0" styleClass="baby" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.view.HomeController">
+   <children>
+      <Pane prefHeight="806.0" prefWidth="228.0" style="-fx-background-color: #343541;">
+         <children>
+            <Pane layoutY="102.0" prefHeight="75.0" prefWidth="228.0" style="-fx-background-color: #202123;">
+               <children>
+                  <Label fx:id="lblName" layoutX="66.0" layoutY="11.0" text="Name" textFill="WHITE">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label fx:id="lblAdress" layoutX="70.0" layoutY="283.0" text="Adress" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblPoints" layoutX="70.0" layoutY="345.0" text="Points" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblId" layoutX="70.0" layoutY="221.0" text="ID" textFill="WHITE">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <AnchorPane fx:id="home" layoutX="228.0" prefHeight="800.0" prefWidth="885.0">
+         <children>
+            <Pane fx:id="btnAdmin" prefHeight="806.0" prefWidth="900.0" style="-fx-background-color: #444654;">
+               <children>
+                  <Pane layoutX="128.0" layoutY="58.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnStart" layoutY="-4.0" mnemonicParsing="false" onAction="#startGame" prefHeight="209.0" prefWidth="200.0" style="-fx-background-color: #343541;" />
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="139.0" prefHeight="17.0" prefWidth="118.0" text="Poubelle" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="128.0" layoutY="546.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnV" layoutY="-4.0" mnemonicParsing="false" onAction="#openVoucher" prefHeight="209.0" prefWidth="200.0" style="-fx-background-color: #343541;" />
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="139.0" prefHeight="17.0" prefWidth="118.0" text="Bon d'achat" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="566.0" layoutY="546.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnStart2" layoutY="-4.0" mnemonicParsing="false" prefHeight="209.0" prefWidth="200.0" style="-fx-background-color: #343541;" />
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="139.0" prefHeight="17.0" prefWidth="118.0" text="Autre" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane layoutX="566.0" layoutY="58.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnH" layoutY="-4.0" mnemonicParsing="false" onAction="#openHistory" prefHeight="209.0" prefWidth="200.0" style="-fx-background-color: #343541;" />
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="139.0" prefHeight="17.0" prefWidth="118.0" text="Historique" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="adminPane" layoutX="350.0" layoutY="303.0" prefHeight="200.0" prefWidth="200.0" visible="false">
+                     <children>
+                        <Button fx:id="btnStart4" layoutY="-4.0" mnemonicParsing="false" onAction="#openAdmin" prefHeight="209.0" prefWidth="200.0" style="-fx-background-color: #343541;" />
+                        <Label alignment="CENTER" layoutX="38.0" layoutY="139.0" prefHeight="17.0" prefWidth="118.0" text="Admin" textFill="WHITE">
+                           <font>
+                              <Font size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="history" layoutX="238.0" layoutY="10.0" prefHeight="800.0" prefWidth="885.0" visible="false">
+         <children>
+            <Pane layoutX="-14.0" layoutY="-13.0" prefHeight="806.0" prefWidth="900.0" style="-fx-background-color: #444654;">
+               <children>
+                  <Label layoutX="326.0" layoutY="14.0" text="Mes dépots" textFill="WHITE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="table" layoutX="26.0" layoutY="98.0" prefHeight="687.0" prefWidth="848.0">
+                    <columns>
+                      <TableColumn fx:id="id" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Id" />
+                        <TableColumn fx:id="date" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Date" />
+                        <TableColumn fx:id="points" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Points" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="retourButton" mnemonicParsing="false" onAction="#retour" prefHeight="51.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Retour" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="voucher" layoutX="248.0" layoutY="20.0" prefHeight="800.0" prefWidth="885.0" visible="false">
+         <children>
+            <Pane layoutX="-14.0" layoutY="-13.0" prefHeight="806.0" prefWidth="900.0" style="-fx-background-color: #444654;">
+               <children>
+                  <Label layoutX="326.0" layoutY="14.0" text="Voucher" textFill="WHITE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="tableV" layoutX="26.0" layoutY="98.0" prefHeight="579.0" prefWidth="848.0">
+                     <columns>
+                        <TableColumn fx:id="idV" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Id" />
+                        <TableColumn fx:id="cost" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Cost" />
+                        <TableColumn fx:id="amount" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Amount" />
+                        <TableColumn fx:id="shop" maxWidth="142.0" minWidth="142.0" prefWidth="142.0" style="-fx-font: 11px &quot;Arial&quot;;" text="Shop" />
+                     </columns>
+                  </TableView>
+                  <ChoiceBox fx:id="voucherBox" layoutX="145.0" layoutY="707.0" prefHeight="53.0" prefWidth="238.0" />
+                  <Button fx:id="btnAcheter" layoutX="566.0" layoutY="707.0" mnemonicParsing="false" onAction="#acheter" prefHeight="53.0" prefWidth="213.0" style="-fx-background-color: #343541;" text="Ajouter">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="retourButton1" mnemonicParsing="false" onAction="#retour" prefHeight="51.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Retour" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="admin" layoutX="222.0" layoutY="-2.0" prefHeight="806.0" prefWidth="906.0" visible="false">
+         <children>
+            <Pane layoutY="-1.0" prefHeight="806.0" prefWidth="906.0" style="-fx-background-color: #444654;">
+               <children>
+                  <Label layoutX="326.0" layoutY="14.0" text="Admin" textFill="WHITE">
+                     <font>
+                        <Font size="48.0" />
+                     </font>
+                  </Label>
+                  <ChoiceBox fx:id="binBox" layoutX="176.0" layoutY="734.0" prefHeight="53.0" prefWidth="238.0" />
+                  <Button fx:id="btnReset" layoutX="563.0" layoutY="734.0" mnemonicParsing="false" onAction="#reset" prefHeight="53.0" prefWidth="213.0" style="-fx-background-color: #343541;" text="Vider" textFill="WHITE">
+                     <font>
+                        <Font size="35.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="retourButton2" mnemonicParsing="false" onAction="#retour" prefHeight="51.0" prefWidth="137.0" style="-fx-background-color: transparent;" text="Retour" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <BarChart fx:id="dechetPoubelle" layoutX="46.0" layoutY="125.0" prefHeight="579.0" prefWidth="815.0" style="-fx-background-color: white;" title="Déchet en fonction de la poubelle">
+                     <xAxis>
+                        <CategoryAxis fx:id="poubelleY" label="Type" side="BOTTOM" />
+                     </xAxis>
+                     <yAxis>
+                        <NumberAxis fx:id="poubelleX" label="Déchet" side="LEFT" />
+                     </yAxis>
+                  </BarChart>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

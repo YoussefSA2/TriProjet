@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="800.0" maxWidth="1116.0" minHeight="800.0" minWidth="1116.0" prefHeight="800.0" prefWidth="1116.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.view.LoginForm">
+   <children>
+      <ImageView fitHeight="643.0" fitWidth="1153.0" layoutX="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/5902342_3877.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="238.0" fitWidth="176.0" layoutX="635.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/classique.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="238.0" fitWidth="176.0" layoutX="51.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/green.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="238.0" fitWidth="176.0" layoutX="860.0" layoutY="378.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/yellow.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="238.0" fitWidth="176.0" layoutX="306.0" layoutY="379.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/blue.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="383.0" layoutY="223.0" prefHeight="354.0" prefWidth="354.0" style="-fx-background-color: #979A9A95;">
+         <children>
+            <TextField fx:id="txtUser" layoutX="13.0" layoutY="59.0" prefHeight="45.0" prefWidth="329.0" promptText="Username">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="txtPass" layoutX="13.0" layoutY="132.0" onAction="#register" prefHeight="45.0" prefWidth="329.0" promptText="Passeword">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </TextField>
+            <Button fx:id="btnSign" layoutX="42.0" layoutY="216.0" mnemonicParsing="false" onAction="#login" prefHeight="45.0" prefWidth="264.0" text="Sign in">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Button layoutX="43.0" layoutY="289.0" mnemonicParsing="false" onAction="#register" prefHeight="45.0" prefWidth="264.0" text="Sign up">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblMsg" alignment="CENTER" contentDisplay="CENTER" layoutX="-3.0" layoutY="14.0" prefHeight="40.0" prefWidth="362.0" textAlignment="CENTER">
+               <font>
+                  <Font size="28.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <ImageView fitHeight="174.0" fitWidth="1144.0" layoutX="-9.0" layoutY="639.0" pickOnBounds="true">
+         <image>
+            <Image url="@../img/conv.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
